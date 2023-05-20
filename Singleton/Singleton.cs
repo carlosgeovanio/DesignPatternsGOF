@@ -7,21 +7,20 @@
 //    - Maybe a simples static class would be better?
 //    - Violates SRP
 
-namespace DesignPatternsGOF.Singleton
-{
-    public class Singleton
-    {
-        protected Singleton() { }
-        static Singleton? instancce;
-        public string Setting { get; set; } = "Foo bar baz";
+namespace DesignPatternsGOF.Singleton;
 
-        public static Singleton Instance()
+public class Singleton
+{
+    protected Singleton() { }
+    static Singleton? instancce;
+    public string Setting { get; set; } = "Foo bar baz";
+
+    public static Singleton Instance()
+    {
+        if (instancce is null)
         {
-            if (instancce is null)
-            {
-                instancce = new Singleton();
-            }
-            return instancce;
+            instancce = new Singleton();
         }
+        return instancce;
     }
 }
