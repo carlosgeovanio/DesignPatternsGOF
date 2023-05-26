@@ -11,15 +11,22 @@
 #endregion
 
 #region Factory
-using DesignPatternsGOF.Factory.NetworkFactory;
-using DesignPatternsGOF.Factory.NetworkUtility;
+//using DesignPatternsGOF.Factory.NetworkFactory;
+//using DesignPatternsGOF.Factory.NetworkUtility;
 
-var factory = new NetworkFactory();
-var arp = factory.GetNetworkInstante(NetworkType.ARP);
-var dns = factory.GetNetworkInstante(NetworkType.DNS);
-var ping = factory.GetNetworkInstante(NetworkType.Ping);
+//var factory = new NetworkFactory();
+//var arp = factory.GetNetworkInstante(NetworkType.ARP);
+//var dns = factory.GetNetworkInstante(NetworkType.DNS);
+//var ping = factory.GetNetworkInstante(NetworkType.Ping);
 
-arp.SendRequest("123.123.123.123", 1);
-dns.SendRequest("456.456.456.456", 2);
-ping.SendRequest("789.789.789.789", 3);
+//arp.SendRequest("123.123.123.123", 1);
+//dns.SendRequest("456.456.456.456", 2);
+//ping.SendRequest("789.789.789.789", 3);
+#endregion
+
+#region Facade
+using DesignPatternsGOF.Facade;
+
+var networkFacade = new NetworkFacade("8.8.8.8", "UDP");
+networkFacade.SendPacketOverNetwork();
 #endregion
