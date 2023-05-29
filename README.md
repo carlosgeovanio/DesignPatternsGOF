@@ -1,3 +1,3 @@
 # DesignPatternsGOF
 
-C# Design Patterns (GoF)
+Design Patterns in C# (GoF)
